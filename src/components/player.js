@@ -20,6 +20,8 @@ export default class Player extends Component{
     *
     * http%3A%2F%2F195.148.104.124%3A1935%2FTesti%2FmyStream%2Fplaylist.m3u8
     *
+    * http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8
+    *
     * */
     const video = this.player;
     const hls = new Hls();
