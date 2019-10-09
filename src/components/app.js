@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import styled from 'styled-components'
 import {borderColor, headerHeight, containerMaxWidth} from './theme';
-import userAvatar from '../images/abotta.png';
+import userAvatar from '../images/lauri.jpg';
 import Watch from './pages/watch';
 import Home from './pages/home';
 import {Route, Switch} from 'react-router';
@@ -78,7 +78,7 @@ export default class App extends Component{
 
       <Header>
         <HeaderWrapper>
-          <HeaderTitle>Camera</HeaderTitle>
+          <HeaderTitle>HLS.js Playerin edut</HeaderTitle>
              <HeaderUserMenu>
                 <HeaderUserAvatar alt="" src={userAvatar}></HeaderUserAvatar>
 
@@ -90,7 +90,7 @@ export default class App extends Component{
 
         <Container>
           <Switch>
-          <Route exact path={'/watch/:id'} component={Watch}/>
+          <Route exact path={'/watch/'} component={Watch}/>
           <Route exact path={'/'} component={Home}/>
 
           </Switch>
