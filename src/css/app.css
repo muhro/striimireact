@@ -14,3 +14,9 @@ body{
     font-size: 14px;
     font-family: 'Open Sans', sans-serif;
 }
+.hey{
+    width: 50px;
+    display: flex;
+    align-items: center;
+
+}

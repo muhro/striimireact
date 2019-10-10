@@ -1,8 +1,8 @@
 import React,{Component} from 'react'
 import styled from 'styled-components'
 import {borderColor, headerHeight, containerMaxWidth} from './theme';
-import userAvatar from '../images/lauri.jpg';
 import Watch from './pages/watch';
+import Watch2 from './pages/watch2';
 import Home from './pages/home';
 import {Route, Switch} from 'react-router';
 
@@ -34,12 +34,7 @@ const Main = styled.div `
   padding: 20px 0;
   
 `;
-const Footer = styled.div `
 
-  border-top: 1px solid ${borderColor};
-  padding: 10px 0;
-  
-`;
 const HeaderTitle = styled.div `
   font-size: 30px;
   font-weight: 800;
@@ -48,28 +43,11 @@ const HeaderTitle = styled.div `
   text-align: center;
   color: rgba(0,0,0,0.7);
 `;
-const HeaderUserMenu = styled.div `
-  width: 50px;
-  display: flex;
-   align-items: center;
 
-`;
-const Copyright = styled.p`
-
-font-size: 12px;
-text-align: center;
-`;
 const HeaderWrapper = styled.div `
   display: flex;
 `;
-const HeaderUserAvatar = styled.img `
 
- border-radius: 50%;
- width: 30px;
- height: 30px;
-
-
-`;
 export default class App extends Component{
 
   render(){
@@ -78,11 +56,8 @@ export default class App extends Component{
 
       <Header>
         <HeaderWrapper>
-          <HeaderTitle>HLS.js Playerin edut</HeaderTitle>
-             <HeaderUserMenu>
-                <HeaderUserAvatar alt="" src={userAvatar}></HeaderUserAvatar>
+          <HeaderTitle>HLS.js</HeaderTitle>
 
-           </HeaderUserMenu>
         </HeaderWrapper>
       </Header>
 
@@ -90,22 +65,20 @@ export default class App extends Component{
 
         <Container>
           <Switch>
-          <Route exact path={'/watch/'} component={Watch}/>
-          <Route exact path={'/'} component={Home}/>
+          <Route  path={'/watch2/'} exact component={Watch2}/>
+          <Route  path={'/watch/'} exact component={Watch}/>
+          <Route  path={'/'} component={Home}/>
 
           </Switch>
         </Container>
 
       </Main>
-      <Footer>
+
         <Container>
 
-          <Copyright>
-
-          </Copyright>
 
         </Container>
-      </Footer>
+
     </AppWrapper>
   }
 }

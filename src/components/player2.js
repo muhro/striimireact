@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import styled from 'styled-components';
-import Hls from 'hls.js'
+import Hls from '../../node_modules/hls.js/dist/hls'
 
 const PlayerWrapper = styled.div`
 
@@ -10,11 +10,11 @@ const PlayerInner = styled.div`
 
  
 `;
-export default class Player extends Component{
+export default class Player2 extends Component{
 
 
   componentDidMount(){
-    const streamURL = 'http://195.148.104.124:1935/lauri/jee/playlist.m3u8';
+    const streamURL = 'http://qthttp.apple.com.edgesuite.net/1010qwoeiuryfg/sl.m3u8';
     /*
     * http://195.148.104.124:1935/Testi/myStream/playlist.m3u8
     *
@@ -38,6 +38,18 @@ export default class Player extends Component{
     const hls = new Hls();
     hls.loadSource(streamURL);
     hls.attachMedia(video);
+   document.getElementById("video").addEventListener('click',() => {
+    let i = 1;
+    hls.nextLevel = i;
+    console.log( hls.nextLevel)
+
+    });
+    document.getElementById("videoh").addEventListener('click',() => {
+      let h = 7;
+      hls.nextLevel = h;
+      console.log( hls.nextLevel)
+
+    });
 
     if(Hls.isSupported() && this.player) {
       hls.on(Hls.Events.MANIFEST_PARSED, function() {
@@ -60,6 +72,7 @@ export default class Player extends Component{
       <PlayerInner>
         <video style={style} ref={(player) => this.player = player} autoPlay={true}/>
       </PlayerInner>
+
     </PlayerWrapper>
   }
 
